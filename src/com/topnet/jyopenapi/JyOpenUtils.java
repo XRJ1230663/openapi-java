@@ -41,10 +41,10 @@ public class JyOpenUtils {
 	    StringBuilder queryString = new StringBuilder();
 	    for(String key : sortedKeys) {
 	        // 这里对key和value进行编码
-	    	queryString.append("&").append(percentEncode(key)).append("=").append(percentEncode(parameters.get(key)));
+	    	queryString.append("&").append(key).append("=").append(parameters.get(key));
 	    }
 	    try {
-	    	String signature=HmacSHA1.HmacSHA1Encrypt(percentEncode(queryString.toString().substring(1)),secret);
+	    	String signature=HmacSHA1.HmacSHA1Encrypt(percentEncode(queryString.toString().substring(1)),secret+"&");
 	    	return signature;
 		} catch (Exception e) {
 			e.printStackTrace();
