@@ -24,7 +24,7 @@ public class JyOpenApi  {
 		Map<String, String> parameters = new HashMap<String, String>();
 		// 请求参数
 		parameters.put("action","getdata");
-	    parameters.put("key", "北京拓普丰联");
+	    parameters.put("keyword", "北京拓普丰联信息工程有限公司"); //keyword参数必须是公司名称全称,不支持模糊匹配。
 	    parameters.put("appid", appid);
 	    parameters.put("timestamp", new Date().getTime()/1000+"");
   
