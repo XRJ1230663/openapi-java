@@ -18,8 +18,8 @@ public class JyOpenApi  {
 	 * 
 	 */
 	public static void main(String[] args) throws UnsupportedEncodingException {
-		String appid="jyo_2018Yhsal8Ujk";
-		String secret="secRtjdsklv90bbn";
+		String appid="jyo_fdwdasMIAA5TUIhu91";
+		String secret="22444sa8B";
 		
 		Map<String, String> parameters = new HashMap<String, String>();
 		// 请求参数
@@ -32,7 +32,7 @@ public class JyOpenApi  {
 	    try {
 	    	String signature=JyOpenUtils.Signature(parameters, secret);
 	    	parameters.put("signature",signature);
-	    	JyOpenUtils.post("https://api.jianyu360.com/open",parameters);
+	    	System.out.println(JyOpenUtils.post("https://api.jianyu360.com/open",parameters));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
