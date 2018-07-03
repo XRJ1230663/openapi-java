@@ -17,22 +17,24 @@ public class JyOpenApi  {
 	 * 调用样例
 	 * 
 	 */
-	public static void main(String[] args) throws UnsupportedEncodingException {
-		String appid="jyo_fdwdasMIAA5TUIhu91";
-		String secret="22444sa8B";
-		
+	public static void main2(String[] args) throws UnsupportedEncodingException {
+		String appid="jyo_GAlUW1NAWwABBgtdAywk";
+		String secret="4h0G2491";
+		String apiurl="https://api.jianyu360.com/open";
+
 		Map<String, String> parameters = new HashMap<String, String>();
 		// 请求参数
 		parameters.put("action","getdata");
-	    parameters.put("keyword", "北京拓普丰联信息工程有限公司"); //keyword参数必须是公司名称全称,不支持模糊匹配。
+	    parameters.put("keyword", "北京拓普丰联信息工程有限公司"); //keyword参数必须是公司名称全称,不支持模糊匹配。  
 	    parameters.put("appid", appid);
+	    parameters.put("pagenum", "1");
 	    parameters.put("timestamp", new Date().getTime()/1000+"");
   
 	    //参数签名
 	    try {
 	    	String signature=JyOpenUtils.Signature(parameters, secret);
 	    	parameters.put("signature",signature);
-	    	System.out.println(JyOpenUtils.post("https://api.jianyu360.com/open",parameters));
+	    	System.out.println(JyOpenUtils.post(apiurl,parameters));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
